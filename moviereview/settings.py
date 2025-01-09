@@ -118,8 +118,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # POSTGRES DATABASE FOR PRODUCITON
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+
+DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
