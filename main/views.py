@@ -17,7 +17,7 @@ def home(request):
 
     return render(request, 'main/index.html', context)
 
-# detail page
+#detail page
 def detail(request, id):
     movie = Movie.objects.get(id=id) # select * from movie where id=id
     reviews = Review.objects.filter(movie=id).order_by("-comment")
