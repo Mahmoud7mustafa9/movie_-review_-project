@@ -125,3 +125,7 @@ DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
