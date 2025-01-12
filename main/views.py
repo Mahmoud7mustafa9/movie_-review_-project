@@ -17,6 +17,8 @@ def home(request):
 
     return render(request, 'main/index.html', context)
 
+
+
 #detail page
 def detail(request , id):
     movie = get_object_or_404(Movie, id=id)
@@ -136,7 +138,7 @@ def edit_review(request, movie_id, review_id):
                 form = ReviewForm(request.POST, instance=review)
                 if form.is_valid():
                     data = form.save(commit=False)
-                    if (data.rating > 10) or (data.rating < 0):
+                    if (data.rating > 5) or (data.rating < 0):
                         error = "Out or range. Please select rating from 0 to 10."
                         return render(request, 'main/editreview.html', {"error": error, "form": form})
                     else:
