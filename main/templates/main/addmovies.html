@@ -11,7 +11,8 @@
             <h3 class="text-center">{{ controller }}</h3>
             <form action="" method="POST">
                 {% csrf_token %}
-                {{ form | crispy }}
+                {{ form|crispy }}
+
                 <input type="submit" value="{{ controller }}" class="btn btn-danger">
             </form>
         </div>

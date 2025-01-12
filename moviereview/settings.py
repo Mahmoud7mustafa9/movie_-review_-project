@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms'
+    'crispy_forms',
+    'bootstrap4',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -115,7 +117,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 # POSTGRES DATABASE FOR PRODUCITON
 import dj_database_url
 
