@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect ,  get_object_or_404
 from main.models import * 
 from main.serializers import *
 from django.db.models import Avg
@@ -18,8 +18,9 @@ def home(request):
     return render(request, 'main/index.html', context)
 
 #detail page
-def detail(request, id):
-    movie = Movie.objects.get(id=id) # select * from movie where id=id
+def detail(request , id):
+    movie = get_object_or_404(Movie, id=id)
+     # select * from movie where id=id
     reviews = Review.objects.filter(movie=id).order_by("-comment")
 
     average = reviews.aggregate(Avg("rating"))["rating__avg"]
